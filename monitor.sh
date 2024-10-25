@@ -234,7 +234,7 @@ do
 done
 
 #report the number of jobs to launch
-nToLaunch=$(echo $listToLaunch|wc -w)
+nToLaunch=$(echo $listToLaunch|sed 's|,| |g'|wc -w)
 echo "Going to launch: $nToLaunch jobs"
 
 #launch
