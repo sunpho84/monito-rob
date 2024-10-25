@@ -204,7 +204,7 @@ do
 done
 
 #gets the list of queued or running jobs
-launchedList=$(squeue --me --Format ArrayJobID,ArrayTaskID,command:200|grep $PWD/$scriptFile|awk '{print $2}')
+launchedList=$(squeue --me --array --Format ArrayJobID,ArrayTaskID,command:200|grep $PWD/$scriptFile|awk '{print $2}')
 nLaunched=$(echo $launchedList|wc -w)
 echo "Currently launched: $nLaunched jobs"
 
