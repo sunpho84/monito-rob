@@ -142,7 +142,7 @@ cleanOutDirOfConf ()
 
 archiveBrokenLog ()
 {
-    echo "The logfile: \"$1\" for job $id has hanged as it is not updated since $nmins mins, above the threshold $nminsBeforeHang"
+    echo "The logfile: \"$1\" for job $id has hanged as it has not updated since $nmins mins, above the threshold $nminsBeforeHang"
     
     confFile=$(tac $1|grep -m 1 "Opening file:"|awk '{print $3}')
     
@@ -197,7 +197,7 @@ do
 	    
 	    purgeJob $id
 	else
-	    echo "Logfile $f is not finished and not old, last update is of $nmins mins, leaving it run for at least another $(($nminsBeforeHang-$nmins)) mins"
+	    echo "Logfile $f has not finished and not old, last update is of $nmins mins, leaving it run for at least another $(($nminsBeforeHang-$nmins)) mins"
 	fi
     fi
     echo -----
