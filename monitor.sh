@@ -221,6 +221,7 @@ do
     ((n++))
 done
 
+#creates the command args
 div=""
 listToLaunch=""
 for j in $(for i in $launchedList $listToPossibleLaunch
@@ -232,7 +233,9 @@ do
     div=","
 done
 
+#report the number of jobs to launch
 nToLaunch=$(echo $listToLaunch|wc -w)
 echo "Going to launch: $nToLaunch jobs"
 
+#launch
 sbatch --array="$listToLaunch" $scriptFile
