@@ -1,0 +1,495 @@
+L 48
+T 96
+WallTime 9000
+
+/*
+Old_Seed 4226854
+*/
+
+Seed 3254911
+StochSource 1
+DilutedSpin 1
+DilutedColor 1
+DilutedSpace 1
+NCopiesHits 3 4
+
+NSources 1
+Name            NoiseType       Tins    Store
+ORI_SOURCE          Z2            0       0
+
+TwistedRun 1
+
+CloverRun 1
+cSW	  1.69
+
+NProps 129
+
+/*
+
+k_x = thetaX*M_PI/L
+k_y = thetaY*M_PI/L
+k_z = thetaZ*M_PI/L
+*/
+
+Name            Ins     SourceName      Tins    Kappa           Mass     R       Charge  ThetaX  ThetaY  ThetaZ  Residue Store
+SOURCE          SM      ORI_SOURCE      -1      0.4                     105              0       0       0               0
+
+S_Ml_R0_0       -        SOURCE         -1      0.1394267       0.00072  1        0.0     0.0     0.0     0.0     1e-15   0
+S_Ms_R0_0       -        SOURCE         -1      0.1394267       0.01825  1        0.0     0.0     0.0     0.0     1e-15   0
+
+
+/*NEW_KIN_PROPS*/
+/* ///////////////////////////////////////////////////////////////// */
+
+S_Ml_R0_V_nu_1     G     S_Ml_R0_0      25      1      0      0
+S_Ml_R0_A_nu_0     G     S_Ml_R0_0      25      9      0      0
+S_Ml_R0_A_nu_1     G     S_Ml_R0_0      25      6      0      0
+S_Ml_R0_A_nu_3     G     S_Ml_R0_0      25      8      0      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_1   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.0    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_1   V0    S_Ml_R0_V_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0    0
+S_Ml_R0_V_nu_1_mu_1_xg_1   V1    S_Ml_R0_V_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_V_nu_1_mu_2_xg_1   V2    S_Ml_R0_V_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_V_nu_1_mu_3_xg_1   V3    S_Ml_R0_V_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+
+
+
+S_Ml_R0_A_nu_0_SEQ_xg_1   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.0    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_1   V0    S_Ml_R0_A_nu_0_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_0_mu_1_xg_1   V1    S_Ml_R0_A_nu_0_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_0_mu_2_xg_1   V2    S_Ml_R0_A_nu_0_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_0_mu_3_xg_1   V3    S_Ml_R0_A_nu_0_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+
+
+
+S_Ml_R0_A_nu_1_SEQ_xg_1   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.0    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_1   V0    S_Ml_R0_A_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_1_mu_1_xg_1   V1    S_Ml_R0_A_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_1_mu_2_xg_1   V2    S_Ml_R0_A_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_1_mu_3_xg_1   V3    S_Ml_R0_A_nu_1_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+
+
+
+S_Ml_R0_A_nu_3_SEQ_xg_1   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.0    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_1   V0    S_Ml_R0_A_nu_3_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_3_mu_1_xg_1   V1    S_Ml_R0_A_nu_3_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_3_mu_2_xg_1   V2    S_Ml_R0_A_nu_3_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+S_Ml_R0_A_nu_3_mu_3_xg_1   V3    S_Ml_R0_A_nu_3_SEQ_xg_1    -1     0      0     0.0     0.0     0.0      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_2   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.152031    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_2   V0    S_Ml_R0_V_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031    0
+S_Ml_R0_V_nu_1_mu_1_xg_2   V1    S_Ml_R0_V_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_V_nu_1_mu_2_xg_2   V2    S_Ml_R0_V_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_V_nu_1_mu_3_xg_2   V3    S_Ml_R0_V_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+
+S_Ml_R0_A_nu_0_SEQ_xg_2   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.152031    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_2   V0    S_Ml_R0_A_nu_0_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_0_mu_1_xg_2   V1    S_Ml_R0_A_nu_0_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_0_mu_2_xg_2   V2    S_Ml_R0_A_nu_0_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_0_mu_3_xg_2   V3    S_Ml_R0_A_nu_0_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+
+S_Ml_R0_A_nu_1_SEQ_xg_2   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.152031    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_2   V0    S_Ml_R0_A_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_1_mu_1_xg_2   V1    S_Ml_R0_A_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_1_mu_2_xg_2   V2    S_Ml_R0_A_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_1_mu_3_xg_2   V3    S_Ml_R0_A_nu_1_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+
+S_Ml_R0_A_nu_3_SEQ_xg_2   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.152031    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_2   V0    S_Ml_R0_A_nu_3_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_3_mu_1_xg_2   V1    S_Ml_R0_A_nu_3_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_3_mu_2_xg_2   V2    S_Ml_R0_A_nu_3_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+S_Ml_R0_A_nu_3_mu_3_xg_2   V3    S_Ml_R0_A_nu_3_SEQ_xg_2    -1     0      0     0.0     0.0     0.152031      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_3   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.456093    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_3   V0    S_Ml_R0_V_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093    0
+S_Ml_R0_V_nu_1_mu_1_xg_3   V1    S_Ml_R0_V_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_V_nu_1_mu_2_xg_3   V2    S_Ml_R0_V_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_V_nu_1_mu_3_xg_3   V3    S_Ml_R0_V_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+
+S_Ml_R0_A_nu_0_SEQ_xg_3   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.456093    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_3   V0    S_Ml_R0_A_nu_0_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_0_mu_1_xg_3   V1    S_Ml_R0_A_nu_0_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_0_mu_2_xg_3   V2    S_Ml_R0_A_nu_0_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_0_mu_3_xg_3   V3    S_Ml_R0_A_nu_0_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+
+S_Ml_R0_A_nu_1_SEQ_xg_3   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.456093    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_3   V0    S_Ml_R0_A_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_1_mu_1_xg_3   V1    S_Ml_R0_A_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_1_mu_2_xg_3   V2    S_Ml_R0_A_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_1_mu_3_xg_3   V3    S_Ml_R0_A_nu_1_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+
+S_Ml_R0_A_nu_3_SEQ_xg_3   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.456093    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_3   V0    S_Ml_R0_A_nu_3_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_3_mu_1_xg_3   V1    S_Ml_R0_A_nu_3_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_3_mu_2_xg_3   V2    S_Ml_R0_A_nu_3_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+S_Ml_R0_A_nu_3_mu_3_xg_3   V3    S_Ml_R0_A_nu_3_SEQ_xg_3    -1     0      0     0.0     0.0     0.456093      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_4   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.76016    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_4   V0    S_Ml_R0_V_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016    0
+S_Ml_R0_V_nu_1_mu_1_xg_4   V1    S_Ml_R0_V_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_V_nu_1_mu_2_xg_4   V2    S_Ml_R0_V_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_V_nu_1_mu_3_xg_4   V3    S_Ml_R0_V_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+
+S_Ml_R0_A_nu_0_SEQ_xg_4   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.76016    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_4   V0    S_Ml_R0_A_nu_0_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_0_mu_1_xg_4   V1    S_Ml_R0_A_nu_0_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_0_mu_2_xg_4   V2    S_Ml_R0_A_nu_0_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_0_mu_3_xg_4   V3    S_Ml_R0_A_nu_0_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+
+S_Ml_R0_A_nu_1_SEQ_xg_4   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.76016    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_4   V0    S_Ml_R0_A_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_1_mu_1_xg_4   V1    S_Ml_R0_A_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_1_mu_2_xg_4   V2    S_Ml_R0_A_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_1_mu_3_xg_4   V3    S_Ml_R0_A_nu_1_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+
+S_Ml_R0_A_nu_3_SEQ_xg_4   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    0.76016    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_4   V0    S_Ml_R0_A_nu_3_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_3_mu_1_xg_4   V1    S_Ml_R0_A_nu_3_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_3_mu_2_xg_4   V2    S_Ml_R0_A_nu_3_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+S_Ml_R0_A_nu_3_mu_3_xg_4   V3    S_Ml_R0_A_nu_3_SEQ_xg_4    -1     0      0     0.0     0.0     0.76016      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_5   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.06422    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_5   V0    S_Ml_R0_V_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422    0
+S_Ml_R0_V_nu_1_mu_1_xg_5   V1    S_Ml_R0_V_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_V_nu_1_mu_2_xg_5   V2    S_Ml_R0_V_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_V_nu_1_mu_3_xg_5   V3    S_Ml_R0_V_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+
+S_Ml_R0_A_nu_0_SEQ_xg_5   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.06422    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_5   V0    S_Ml_R0_A_nu_0_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_0_mu_1_xg_5   V1    S_Ml_R0_A_nu_0_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_0_mu_2_xg_5   V2    S_Ml_R0_A_nu_0_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_0_mu_3_xg_5   V3    S_Ml_R0_A_nu_0_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+
+S_Ml_R0_A_nu_1_SEQ_xg_5   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.06422    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_5   V0    S_Ml_R0_A_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_1_mu_1_xg_5   V1    S_Ml_R0_A_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_1_mu_2_xg_5   V2    S_Ml_R0_A_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_1_mu_3_xg_5   V3    S_Ml_R0_A_nu_1_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+
+S_Ml_R0_A_nu_3_SEQ_xg_5   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.06422    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_5   V0    S_Ml_R0_A_nu_3_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_3_mu_1_xg_5   V1    S_Ml_R0_A_nu_3_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_3_mu_2_xg_5   V2    S_Ml_R0_A_nu_3_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+S_Ml_R0_A_nu_3_mu_3_xg_5   V3    S_Ml_R0_A_nu_3_SEQ_xg_5    -1     0      0     0.0     0.0     1.06422      0
+
+
+
+
+S_Ml_R0_V_nu_1_SEQ_xg_6   -      S_Ml_R0_V_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.36828    1e-15   0
+
+S_Ml_R0_V_nu_1_mu_0_xg_6   V0    S_Ml_R0_V_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828    0
+S_Ml_R0_V_nu_1_mu_1_xg_6   V1    S_Ml_R0_V_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_V_nu_1_mu_2_xg_6   V2    S_Ml_R0_V_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_V_nu_1_mu_3_xg_6   V3    S_Ml_R0_V_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+
+S_Ml_R0_A_nu_0_SEQ_xg_6   -      S_Ml_R0_A_nu_0     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.36828    1e-15   0
+
+S_Ml_R0_A_nu_0_mu_0_xg_6   V0    S_Ml_R0_A_nu_0_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_0_mu_1_xg_6   V1    S_Ml_R0_A_nu_0_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_0_mu_2_xg_6   V2    S_Ml_R0_A_nu_0_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_0_mu_3_xg_6   V3    S_Ml_R0_A_nu_0_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+
+S_Ml_R0_A_nu_1_SEQ_xg_6   -      S_Ml_R0_A_nu_1     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.36828    1e-15   0
+
+S_Ml_R0_A_nu_1_mu_0_xg_6   V0    S_Ml_R0_A_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_1_mu_1_xg_6   V1    S_Ml_R0_A_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_1_mu_2_xg_6   V2    S_Ml_R0_A_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_1_mu_3_xg_6   V3    S_Ml_R0_A_nu_1_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+
+S_Ml_R0_A_nu_3_SEQ_xg_6   -      S_Ml_R0_A_nu_3     -1     0.1394267    0.01825    0   0.0     0.0     0.0    1.36828    1e-15   0
+
+S_Ml_R0_A_nu_3_mu_0_xg_6   V0    S_Ml_R0_A_nu_3_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_3_mu_1_xg_6   V1    S_Ml_R0_A_nu_3_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_3_mu_2_xg_6   V2    S_Ml_R0_A_nu_3_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+S_Ml_R0_A_nu_3_mu_3_xg_6   V3    S_Ml_R0_A_nu_3_SEQ_xg_6    -1     0      0     0.0     0.0     1.36828      0
+
+
+S_Ml_R0_0_SM    SM       S_Ml_R0_0      -1      0.4                     105              0       0       0               0
+S_Ms_R0_0_SM    SM       S_Ms_R0_0      -1      0.4                     105              0       0       0               0
+
+
+ZeroModeSubtraction UNNO_ALEMANNA
+
+PhotonGauge FEYNMAN
+PhotonDiscretization WILSON
+
+FreeTheory 0
+RandomGaugeTransform 0
+
+LandauGaugeFix 0
+StoreConf 0
+
+LocHadrCurr 0
+LocMuonCurr 0
+
+NMes2PtsContr 126
+
+/*NEW_KIN_CONTRS*/
+
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_1
+
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_1
+
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_1
+
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_1
+
+
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_1
+PHOTON_EMISSION_tw_25_xg_0               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_1
+
+
+
+
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_2
+
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_2
+
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_2
+
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_2
+
+
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_2
+PHOTON_EMISSION_tw_25_xg_0.1               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_2
+
+
+
+
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_3
+
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_3
+
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_3
+
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_3
+
+
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_3
+PHOTON_EMISSION_tw_25_xg_0.3               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_3
+
+
+
+
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_4
+
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_4
+
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_4
+
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_4
+
+
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_4
+PHOTON_EMISSION_tw_25_xg_0.5               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_4
+
+
+
+
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_5
+
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_5
+
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_5
+
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_5
+
+
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_5
+PHOTON_EMISSION_tw_25_xg_0.7               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_5
+
+
+
+
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_0_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_1_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_2_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_V_nu_1_mu_3_xg_6
+
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_0_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_1_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_2_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_0_mu_3_xg_6
+
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_0_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_1_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_2_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_1_mu_3_xg_6
+
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_0_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_1_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_2_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_3_mu_3_xg_6
+
+
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_V_nu_1_SEQ_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_0_SEQ_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_1_SEQ_xg_6
+PHOTON_EMISSION_tw_25_xg_0.9               S_Ms_R0_0     S_Ml_R0_A_nu_3_SEQ_xg_6
+
+
+
+
+MES_2PT                       S_Ml_R0_0         S_Ml_R0_0
+MES_2PT                       S_Ml_R0_0         S_Ms_R0_0
+MES_2PT                       S_Ms_R0_0         S_Ms_R0_0
+
+MES_2PT                       S_Ml_R0_0_SM      S_Ml_R0_0_SM
+MES_2PT                       S_Ml_R0_0_SM      S_Ms_R0_0_SM
+MES_2PT                       S_Ms_R0_0_SM      S_Ms_R0_0_SM
+
+
+
+
+/* --------------------------------------- */
+NGammaContr 14
+P5P5
+S0P5
+V0P5
+V1P5
+V2P5
+V3P5
+A0P5
+A1P5
+A2P5
+A3P5
+V0V0
+V1V1
+V2V2
+V3V3
+
+
+
+
+
+
+
+
+NMesLepQ1Q2LepmassMesMass 0
+
+NBar2PtsContr 0
+
+NHandcuffsContr 0
+
+NFftProps 0
+
+ApeSmearingAlpha 0.5
+ApeSmearingNiters 20
+
+NGaugeConf 10
+
+confs/conf.0300_r0 out_tw_25_s/0300_r0
+confs/conf.0316_r0 out_tw_25_s/0316_r0
+confs/conf.0332_r0 out_tw_25_s/0332_r0
+confs/conf.0348_r0 out_tw_25_s/0348_r0
+confs/conf.0364_r0 out_tw_25_s/0364_r0
+confs/conf.0380_r0 out_tw_25_s/0380_r0
+confs/conf.0396_r0 out_tw_25_s/0396_r0
+confs/conf.0412_r0 out_tw_25_s/0412_r0
+confs/conf.0428_r0 out_tw_25_s/0428_r0
+confs/conf.0444_r0 out_tw_25_s/0444_r0

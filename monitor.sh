@@ -4,6 +4,35 @@
 nminsBeforeHang=5
 finishedLogsDir=finishedLogs
 failedLogsDir=failedLogs
+pendingTime=10
+
+#provides a mock squeue environment
+if ! which squeue
+then
+    echo "Mocking the slurm"
+    
+    squeue ()
+    {
+	cat slurmStatus
+    }
+
+    scancel ()
+    {
+	awk '$1!='$1'' slurmStatus > tmp
+	mv tmp slurmStatus
+    }
+    
+    sbatch ()
+    {
+	list=$(echo $1|sed 's|sbatch||;s|--array=||;s|,| |g'|awk '{print $0}')
+	for j in $list
+	do
+	    echo $RANDOM$RANDOM $j $jobName $PWD/$scriptFile PENDING
+	done|awk 'BEGIN{srand()}{print $0,int(rand()*'$pendingTime')}' >> slurmStatus
+	
+	echo "Launched list: $list"
+    }
+fi
 
 #check the arguments
 if [ -z "$1" ]
@@ -38,6 +67,9 @@ getSbatchArg ()
     
     echo $tmp
 }
+
+#finds the job name
+jobName=$(getSbatchArg --job-name)
 
 #finds the walltime
 walltime=$(getSbatchArg --time)
@@ -97,6 +129,79 @@ then
     exit 0
 fi
 
+archiveFinishedLog ()
+{
+    echo "Logfile $1 has correctly finished, moving it to $finishedLogsDir"
+    mv $f finishedLogs
+}
+
+cleanOutDirOfConf ()
+{
+    outDir=$(grep $confFile $inputFile|awk '{print $2}')
+	    
+    if [ -z "$outDir" ]
+    then
+	echo "Unable to find the conf $confFile in the input, very weird, skipping it"
+	
+    else 
+	if [ ! -f "$outDir" ]
+	then
+	    echo "Output dir: $outDir not existing, skipping the conf"
+	    
+	    finishedFile=$outDir/finished$suff
+	    if [ -f  ]
+	    then
+		echo "The conf $confFile has finished as the $finishedFile exists, skipping the conf"
+	    else
+		echo "The conf $confFile has not yet finished"
+		
+		runFile=$outDir/running$suff
+		
+		if [ -f "$runFile" ]
+		then
+		    echo "Running file $runFile found, removing it"
+		    rm $runFile
+		else
+		    echo "Running file $runFile not found, no need to remove it"
+		fi
+	    fi
+	fi
+    fi
+}
+
+archiveBrokenLog ()
+{
+    echo "The logfile: \"$1\" for job $id has hanged as it is not updated since $nmins mins, above the threshold $nminsBeforeHang"
+    
+    confFile=$(tac $1|grep -m 1 "Opening file:"|awk '{print $3}')
+    
+    if [ -z "$confFile" ]
+    then
+	echo "Failed to detect last running conf"
+    else
+	echo "Corresponding conf: $confFile"
+	
+	if [ ! -f "$confFile" ]
+	then
+	    echo "Conf: $confFile not existing, skipping it"
+	else
+	    cleanOutDirOfConf "$confFile"
+	fi
+    fi
+
+    echo "Moving logfile $f into broken log files"
+    mv "$1" "$failedLogsDir"
+}
+
+purgeJob ()
+{
+    if squeue --me|awk '$1==$1'|grep $1 2> /dev/null
+    then
+	echo "Job $1 is running, killing it"
+	scancel $1
+    fi
+}
+
 #run on all logfiles
 for f in $(ls $logTemplatePref*$logTemplateSuff 2> /dev/null)
 do
@@ -111,63 +216,52 @@ do
     #deal with finished jobs
     if tail -n 200 $f|grep -q Ciao
     then
-	echo "Logfile $f has correctly finished, moving it to $finishedLogsDir"
-	mv $f finishedLogs
+	archiveFinishedLog $f
     else
 	nmins=$((($(date +%s)-$(stat -c %Y $f))/60))
 	
 	if [ $nmins -ge $nminsBeforeHang ]
 	then
-	    echo "The logfile: \"$f\" for job $id has hanged as it is not updated since $nmins mins, above the threshold $nminsBeforeHang"
+	    archiveBrokenLog $f
 	    
-	    confFile=$(tac $f|grep -m 1 "Opening file:"|awk '{print $3}')
-	    
-	    if [ -z "$confFile" ]
-	    then
-		echo "Failed to detect last running conf"
-	    else
-		echo "Corresponding conf: $confFile"
-		
-		if [ ! -f "$confFile" ]
-		then
-		    echo "Conf: $confFile not existing, skipping it"
-		else
-		    outDir=$(grep $confFile $inputFile|awk '{print $2}')
-
-		    if [ -z "$outDir" ]
-		    then
-			echo "Unable to find the conf $confFile in the input, very weird, skipping it"
-
-			else 
-			    if [ ! -f "$outdir" ]
-			    then
-				echo "Output dir: $outDir not existing, skipping the conf"
-
-				finishedFile=$outDir/finished$suff
-				if [ -f  ]
-				then
-				    echo "The conf $confFile has finished as the $finishedFile exists, skipping the conf"
-				else
-				    echo "The conf $confFile has not yet finished"
-
-				    runFile=$outDir/running$suff
-				    
-				    if [ -f "$runFile" ]
-				    then
-					echo "Running file $runFile found, removing it"
-					rm $runFile
-				    else
-					echo "Running file $runFile not found, no need to remove it"
-				    fi
-				fi
-			    fi
-		    fi
-		fi
-	    fi
-	    
-	    echo "Moving logfile $f into broken log files"
-	    mv $f $failedLogsDir
+	    purgeJob $id
+	else
+	    echo "Logfile $f is not finished and not old, last update is of $nmins mins, leaving it run for at least another $(($nminsBeforeHang-$nmins)) mins"
 	fi
     fi
     echo -----
 done
+
+#gets the list of queued or running jobs
+launchedList=$(squeue --me --Format ArrayJobID,ArrayTaskID,command:200|grep $PWD/$scriptFile|awk '{print $2}')
+nLaunched=$(echo $launchedList|wc -w)
+echo "Currently launched: $nLaunched jobs"
+
+#creates the list to launch
+listToPossibleLaunch=""
+n=0
+for i in $(grep NGaugeConf $inputFile -A 1000000|grep -v NGaugeConf|awk '{print $2}')
+do
+    if [ ! -f "$i/finished$suff" ]
+    then
+	listToPossibleLaunch="$listToPossibleLaunch $n"
+    fi
+    
+    ((n++))
+done
+
+div=""
+listToLaunch=""
+for j in $(for i in $launchedList $listToPossibleLaunch
+	   do
+	       echo $i
+	   done|sort -g|uniq -u)
+do
+    listToLaunch="$listToLaunch$div$j"
+    div=","
+done
+
+nToLaunch=$(echo $listToLaunch|wc -w)
+echo "Going to launch: $nToLaunch jobs"
+
+sbatch --array="$listToLaunch" $scriptFile
