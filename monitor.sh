@@ -238,4 +238,7 @@ nToLaunch=$(echo $listToLaunch|sed 's|,| |g'|wc -w)
 echo "Going to launch: $nToLaunch jobs"
 
 #launch
-sbatch --array="$listToLaunch" $scriptFile
+if [ "$nToLaunch" -gt 0 ]
+then
+    sbatch --array="$listToLaunch" $scriptFile
+fi
