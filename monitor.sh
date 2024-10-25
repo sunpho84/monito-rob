@@ -4,35 +4,6 @@
 nminsBeforeHang=5
 finishedLogsDir=finishedLogs
 failedLogsDir=failedLogs
-pendingTime=10
-
-#provides a mock squeue environment
-if ! which squeue
-then
-    echo "Mocking the slurm"
-    
-    squeue ()
-    {
-	cat slurmStatus
-    }
-
-    scancel ()
-    {
-	awk '$1!='$1'' slurmStatus > tmp
-	mv tmp slurmStatus
-    }
-    
-    sbatch ()
-    {
-	list=$(echo $1|sed 's|sbatch||;s|--array=||;s|,| |g'|awk '{print $0}')
-	for j in $list
-	do
-	    echo $RANDOM$RANDOM $j $jobName $PWD/$scriptFile PENDING
-	done|awk 'BEGIN{srand()}{print $0,int(rand()*'$pendingTime')}' >> slurmStatus
-	
-	echo "Launched list: $list"
-    }
-fi
 
 #check the arguments
 if [ -z "$1" ]
