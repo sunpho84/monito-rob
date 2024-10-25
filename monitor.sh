@@ -208,10 +208,13 @@ launchedList=$(squeue --me --array --Format ArrayJobID,ArrayTaskID,command:200|g
 nLaunched=$(echo $launchedList|wc -w)
 echo "Currently launched: $nLaunched jobs"
 
+#gets the number of configurations
+nconfs=$(grep NGaugeConf $inputFile|awk '{print $NF}')
+
 #creates the list to launch
 listToPossibleLaunch=""
 n=0
-for i in $(grep NGaugeConf $inputFile -A 1000000|grep -v NGaugeConf|awk '{print $2}')
+for i in $(cat -s $inputFile|grep NGaugeConf -A $nconfs|grep -v NGaugeConf|awk '{print $2}')
 do
     if [ ! -f "$i/finished$suff" ]
     then
