@@ -12,6 +12,12 @@ then
     exit 0
 fi
 
+if ! command -v maybe 2>&1 >/dev/null
+then
+    maybe=echo
+    echo "Dry-run. Launch with: with maybe= $@"
+fi
+
 #check the existence of the script file
 scriptFile=$1
 if [ ! -f "$scriptFile" ]
@@ -103,7 +109,7 @@ fi
 archiveFinishedLog ()
 {
     echo "Logfile $1 has correctly finished, moving it to $finishedLogsDir"
-    mv $f finishedLogs
+    maybe mv $f finishedLogs
 }
 
 cleanOutDirOfConf ()
@@ -131,7 +137,7 @@ cleanOutDirOfConf ()
 		if [ -f "$runFile" ]
 		then
 		    echo "Running file $runFile found, removing it"
-		    rm $runFile
+		    maybe rm $runFile
 		else
 		    echo "Running file $runFile not found, no need to remove it"
 		fi
@@ -161,7 +167,7 @@ archiveBrokenLog ()
     fi
 
     echo "Moving logfile $f into broken log files"
-    mv "$1" "$failedLogsDir"
+    maybe mv "$1" "$failedLogsDir"
 }
 
 purgeJob ()
@@ -243,5 +249,5 @@ echo "Going to launch: $nToLaunch jobs"
 #launch
 if [ "$nToLaunch" -gt 0 ]
 then
-    sbatch --array="$listToLaunch" $scriptFile
+    maybe sbatch --array="$listToLaunch" $scriptFile
 fi
