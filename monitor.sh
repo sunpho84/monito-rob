@@ -12,10 +12,10 @@ then
     exit 0
 fi
 
-if [ -z "$maybe" ]
+if [ "$maybe" != "no" ]
 then
     maybe=echo
-    echo "Dry-run. Launch with: with maybe= $@"
+    echo "Dry-run. Launch with: with maybe=no $@"
 fi
 
 #check the existence of the script file
