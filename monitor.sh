@@ -15,7 +15,7 @@ fi
 if [ "$maybe" != "no" ]
 then
     maybe=echo
-    echo "Dry-run. Launch with: with maybe=no $@"
+    echo "Dry-run. Launch with: with maybe=no $0 $@"
 fi
 
 #check the existence of the script file
