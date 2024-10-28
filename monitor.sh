@@ -109,7 +109,7 @@ fi
 archiveFinishedLog ()
 {
     echo "Logfile $1 has correctly finished, moving it to $finishedLogsDir"
-    maybe mv $f finishedLogs
+    $maybe mv $f finishedLogs
 }
 
 cleanOutDirOfConf ()
@@ -137,7 +137,7 @@ cleanOutDirOfConf ()
 		if [ -f "$runFile" ]
 		then
 		    echo "Running file $runFile found, removing it"
-		    maybe rm $runFile
+		    $maybe rm $runFile
 		else
 		    echo "Running file $runFile not found, no need to remove it"
 		fi
@@ -167,7 +167,7 @@ archiveBrokenLog ()
     fi
 
     echo "Moving logfile $f into broken log files"
-    maybe mv "$1" "$failedLogsDir"
+    $maybe mv "$1" "$failedLogsDir"
 }
 
 purgeJob ()
@@ -175,7 +175,7 @@ purgeJob ()
     if squeue --me|awk '$1==$1'|grep $1 > /dev/null 2>&1
     then
 	echo "Job $1 is running, killing it"
-	maybe scancel $1
+	$maybe scancel $1
     fi
 }
 
@@ -249,5 +249,5 @@ echo "Going to launch: $nToLaunch jobs"
 #launch
 if [ "$nToLaunch" -gt 0 ]
 then
-    maybe sbatch --array="$listToLaunch" $scriptFile
+    $maybe sbatch --array="$listToLaunch" $scriptFile
 fi
