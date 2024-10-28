@@ -12,7 +12,7 @@ then
     exit 0
 fi
 
-if ! command -v maybe 2>&1 >/dev/null
+if [ -z "$maybe" ]
 then
     maybe=echo
     echo "Dry-run. Launch with: with maybe= $@"
