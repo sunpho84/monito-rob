@@ -175,7 +175,7 @@ purgeJob ()
     if squeue --me|awk '$1==$1'|grep $1 > /dev/null 2>&1
     then
 	echo "Job $1 is running, killing it"
-	scancel $1
+	maybe scancel $1
     fi
 }
 
