@@ -224,7 +224,6 @@ listToPossibleLaunch=""
 n=0
 for i in $(cat -s $inputFile|grep NGaugeConf -A $nconfs|grep -v NGaugeConf|awk '{print $2}')
 do
-    echo $i/finished$suff
     if [ ! -f "$i/finished$suff" ]
     then
 	listToPossibleLaunch="$listToPossibleLaunch $n"
