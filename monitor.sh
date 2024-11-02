@@ -151,8 +151,7 @@ cleanOutDirOfConf ()
 archiveBrokenLog ()
 {
     echo "The logfile: \"$1\" for job $id has hanged as it has not updated since $nmins mins, above the threshold $nminsBeforeHang"
-    
-    confFile=$(tac $1|grep -m 1 "Opening file:"|awk '{print $3}')
+    confFile=$(tac $1|grep -v prop|grep -m 1 "Opening file:"|awk '{print $3}')
     
     if [ -z "$confFile" ]
     then
